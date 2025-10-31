@@ -1,4 +1,5 @@
 import { locations } from "./data/locations.js";
+import { normalizeString } from "./utils/normalizeString.js";
 
 function getLocationsData() {
   const data = locations;
@@ -25,4 +26,14 @@ function mappingStates() {
   return states;
 }
 
-console.log(mappingStates());
+function normalizeOnlyValues() {
+  const statesMap = mappingStates();
+
+  const sanitizedValues = statesMap.forEach((item) => {
+    console.log(item);
+  });
+
+  return console.log(sanitizedValues);
+}
+
+console.log(normalizeOnlyValues());

@@ -1,4 +1,7 @@
-function normalizeString(string) {
-  const dirtyString = string;
-  const cleanString = dirtyString.replace();
+export function normalizeString(string) {
+  const dirtyString = String(string);
+
+  const cleanString = dirtyString
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "");
 }
